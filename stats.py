@@ -21,3 +21,11 @@ def get_letter_counts(book_text):
         letter_counts[char] += 1
 
   return letter_counts
+
+def sort_counts(counts):
+  dict_list = []
+  for key in counts:
+    dict_list.append({ "char": key, "count": counts[key]})
+
+  dict_list.sort(reverse=True, key=lambda item: item["count"])
+  return dict_list
